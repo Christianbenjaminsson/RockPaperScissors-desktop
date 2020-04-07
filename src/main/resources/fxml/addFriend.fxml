@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<GridPane id="addFriend"
+          stylesheets="@/css/addFriend.css"
+          xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.rps.controllers.AddFriendWindow"
+          fx:id="root"
+          prefHeight="400.0" prefWidth="600.0" alignment="CENTER" vgap="10" hgap="10">
+
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Button id="backButton"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="0"
+            onAction="#backButtonClicked"
+            pickOnBounds="false"
+            mnemonicParsing="false"
+            focusTraversable="false">
+        <graphic>
+            <ImageView fitHeight="20" fitWidth="50" preserveRatio="true">
+                <Image url="@../images/backbutton.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Label text="Search (One field or more):"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <Label text="First name:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <TextField fx:id="firstNameTextField"
+               GridPane.columnIndex="1" GridPane.rowIndex="2"
+               onKeyTyped="#handleKeyTypedFirstNameTextField"/>
+
+    <Label text="Last name:"
+           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <TextField fx:id="lastNameTextField"
+               GridPane.columnIndex="1" GridPane.rowIndex="3"
+               onKeyTyped="#handleKeyTypedLastNameTextField"/>
+
+    <Label text="Username:"
+           GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+
+    <TextField fx:id="usernameTextField"
+               GridPane.columnIndex="1" GridPane.rowIndex="4"
+               onKeyTyped="#handleKeyTypedUsernameTextField"/>
+
+    <Label text="Email:"
+           GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+    <TextField fx:id="emailTextField"
+               GridPane.columnIndex="1" GridPane.rowIndex="5"
+               onKeyTyped="#handleKeyTypedEmailTextField"/>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="6"
+          GridPane.columnSpan="3" spacing="5">
+        <padding><Insets top="50" right="25" bottom="10" left="25"/></padding>
+
+        <Button fx:id="searchButton" text="Sök" alignment="BOTTOM_CENTER"
+                disable="true"
+                onAction="#handleSearchButton"/>
+        <ListView fx:id="searchResultListView"
+                  visible="false"
+                  onMouseClicked="#enableAddFriendButton"/>
+        <VBox spacing="5">
+            <Button fx:id="addFriendButton"
+                    text="Add friend"
+                    visible="false"
+                    disable="true"
+                    onAction="#handleAddFriendButton"/>
+            <Label fx:id="messageLabel"
+                   id="messageLabel"
+                   visible="false"/>
+        </VBox>
+
+    </HBox>
+
+</GridPane>

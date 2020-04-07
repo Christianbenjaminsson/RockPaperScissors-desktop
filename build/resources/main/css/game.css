@@ -1,0 +1,20 @@
+#gameGridPane {
+	-fx-background-color: #C0D3EB;
+}
+
+#scrollPane {
+    -fx-background-color: #C0D3EB;
+}
+
+Button {
+	-fx-background-radius: 5em;
+	-fx-color: #97BDF0;
+}
+
+#button1 {
+    -fx-color: #4879B8;
+}
+
+Button:hover {
+    -fx-color: #4879B8;
+}

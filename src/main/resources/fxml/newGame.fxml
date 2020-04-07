@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<BorderPane id="newGame"
+            styleClass="newGame"
+            stylesheets="@/css/newGame.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.rps.controllers.NewGameWindow"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <Button
+                id="backButton"
+                onAction="#backButtonClicked"
+                pickOnBounds="false"
+                layoutX="10"
+                layoutY="10"
+                mnemonicParsing="false"
+                focusTraversable="false">
+            <graphic>
+                <ImageView fitHeight="20" fitWidth="50" preserveRatio="true" pickOnBounds="false">
+                    <image>
+                        <Image url="@../images/backbutton.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </top>
+
+    <left>
+        <VBox  id="listViewVBox" spacing="5">
+            <ListView fx:id="friendsListView"
+                      onMouseClicked="#activateInviteFriendButton"/>
+            <Label fx:id="requestLabel"
+                   text="Friend requests"
+                   visible="false"/>
+            <ListView fx:id="requestsListView"
+                      styleClass = "request"
+                      visible="false"
+                      onMouseClicked="#activateRequestButtons"/>
+            <Button fx:id="acceptFriendRequest"
+                    styleClass="request"
+                    text="Accept"
+                    visible="false"
+                    disable="true"
+                    onAction="#handleFriendRequestButtons"/>
+            <Button fx:id="rejectFriendRequest"
+                    styleClass="request"
+                    text="Do not accept"
+                    visible="false"
+                    disable="true"
+                    onAction="#handleFriendRequestButtons"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox id="inviteVBox" spacing="5">
+            <Button fx:id="inviteButton"
+                    id="inviteButton"
+                    text="Invite friend"
+                    focusTraversable="false"
+                    disable="true"
+                    onMouseClicked="#inviteFriendAndStartGame"/>
+            <Button id="playWithCpu"
+                    text="Play with computer"
+                    focusTraversable="false"
+                    onMouseClicked="#playWithCpuAndStartGame"/>
+            <Label fx:id="inviteLabel" id="inviteLabel"/>
+            <Button id="addFriend"
+                    text="Add friend"
+                    focusTraversable="false"
+                    onMouseClicked="#addFriendButtonClicked"/>
+        </VBox>
+    </center>
+
+
+</BorderPane>

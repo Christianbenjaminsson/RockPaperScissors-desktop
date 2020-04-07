@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="activeGame"
+            styleClass="activeGame"
+            stylesheets="@/css/activeGame.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.rps.controllers.ActiveGameWindow"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <HBox id="header_right">
+            <Button id="logout"
+                    text="Log out"
+                    focusTraversable="false"
+                    layoutX="100"
+                    onMouseClicked="#logOutButtonClicked"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox>
+            <Label fx:id="makeMoveLabel"
+                   text="Your turn to make a move"/>
+            <ListView fx:id="makeMoveListView"
+                      onMouseClicked="#openGame"/>
+            <Label fx:id="opponentsTurnLabel"
+                   text="Opponent's turn to make a move"/>
+            <ListView fx:id="opponentsTurnListView"
+                      onMouseClicked="#openGame"/>
+            <Label fx:id="finishedGamesLabel"
+                   text="Finished games"/>
+            <ListView fx:id="finishedGamesListView"
+                      onMouseClicked="#openFinishedGame"/>
+            <Button fx:id="newFriendRequestButton"
+                    id="newFriendRequestButton"
+                    styleClass="specialButton"
+                    text="You've got a new friend request!"
+                    onAction="#showFriendRequests"/>
+            <Label fx:id="gameInvitationLabel"
+                   text="Game invitations"/>
+            <HBox fx:id="gameInvitationHBox" id="gameInvitationHBox">
+                <ListView fx:id="gameInvitationListView"
+                          id="gameInvitationListView"
+                          onMouseClicked="#activateGameInvitationButtons"/>
+                <VBox id="invitationButtonsVBox" spacing="5">
+                    <Button fx:id="acceptInvitationButton"
+                            id="acceptInvitationButton"
+                            styleClass="specialButton"
+                            text="Accept"
+                            onAction="#handleGameInvitationButtons"/>
+                    <Button fx:id="rejectInvitationButton"
+                            id="rejectInvitationButton"
+                            styleClass="specialButton"
+                            text="Do not accept"
+                            onAction="#handleGameInvitationButtons"/>
+                </VBox>
+
+            </HBox>
+        </VBox>
+
+    </center>
+    <bottom>
+            <HBox>
+                <Button text="Refresh window"
+                        focusTraversable="false"
+                        onAction="#refreshActiveGameWindow"/>
+                <Button id="newGameButton"
+                        text="New game"
+                        focusTraversable="false"
+                        onMouseClicked="#newGameButtonClicked"/>
+                <Button id="helpbutton"
+                        text="Help"
+                        focusTraversable="false"
+                        onMouseClicked="#helpButtonClicked"/>
+            </HBox>
+    </bottom>
+
+
+</BorderPane>

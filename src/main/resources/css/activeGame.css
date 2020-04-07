@@ -1,0 +1,49 @@
+#activeGame {
+	-fx-background-color: #C0D3EB;
+	-fx-padding: 10px;
+}
+
+Button {
+	-fx-background-radius: 5em;
+	-fx-color: #97BDF0;
+}
+
+Button:hover {
+    -fx-color: #4879B8;
+}
+
+HBox {
+    -fx-alignment: bottom-center;
+    -fx-spacing: 100;
+}
+
+#header_right {
+    -fx-alignment: top-right;
+}
+
+#gameInvitationHBox {
+    -fx-alignment: center-left;
+    -fx-padding: 10 10 10 0;
+}
+
+#invitationButtonsVBox {
+    -fx-alignment: center-left;
+}
+
+.specialButton {
+     -fx-border-color: #F09F30;
+     -fx-border-width: 2;
+     -fx-border-radius: 5em;
+}
+
+
+#gameInvitationListView {
+     -fx-border-color: #F09F30;
+     -fx-border-width: 2;
+}
+
+#newFriendRequestButton {
+     -fx-padding: 5px;
+     -fx-border-insets: 5px;
+     -fx-background-insets: 5px;
+}

@@ -1,0 +1,31 @@
+#newGame {
+	-fx-background-color: #C0D3EB;
+	-fx-padding: 5px;
+}
+
+Button {
+	-fx-background-radius: 5em;
+	-fx-color: #97BDF0;
+    -fx-border-radius: 5em;
+}
+
+Button:hover {
+    -fx-color: #4879B8;
+}
+
+#listViewVBox {
+    -fx-padding: 10 0 0 0;
+}
+
+#inviteVBox {
+    -fx-alignment: bottom-center;
+}
+
+#inviteLabel {
+    -fx-text-fill: #FF0000;
+}
+
+.request {
+    -fx-border-color: #F09F30;
+    -fx-border-width: 2;
+}
